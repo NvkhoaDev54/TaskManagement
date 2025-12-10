@@ -1,0 +1,14 @@
+const errorHandler = (err, req, res, next) => {
+    console.error(err.stack)
+
+    const statusCode = err.statusCode || 500
+    const msg = err.msg || "Internal Server Error"
+
+    res.status(statusCode).json({
+        success: false,
+        msg,
+        stack: process.env.NODE_ENV === "NODE_ENV=development" ? err.stack : undefined
+    })
+}
+
+module.exports = errorHandler
