@@ -1,0 +1,74 @@
+# tạo file .gitignore mới (nếu chưa có)
+touch .gitignore
+# hoặc ghi luôn nội dung mẫu vào file
+cat > .gitignore << 'EOF'
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+.pnpm-debug.log
+
+# Env files
+.env
+.env.*.local
+.env.local
+
+# Build output
+dist/
+build/
+out/
+coverage/
+.nyc_output/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Logs
+logs/
+*.log
+logs/*.log
+
+# Optional npm cache directory
+.npm
+
+# IDEs / editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Frameworks / tooling
+.next/
+.nuxt/
+.vercel/
+.serverless/
+.parcel-cache/
+.cache/
+.eslintcache
+.bundle/
+public/build/
+
+# testing
+coverage/
+
+# mac
+*.DS_Store
+
+# others
+.sass-cache
+/.pids
+/*.tgz
+
+EOF
